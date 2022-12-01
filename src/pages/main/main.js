@@ -2,18 +2,9 @@ const {invoke} = window.__TAURI__.tauri;
 
 let greetInputEl;
 let greetMsgEl;
-
-async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    greetMsgEl.textContent = await invoke("greet", {name: greetInputEl.value});
-}
-
-document.querySelector("#connect_button").addEventListener("click", () => window.location.href = "../test/test.html");
-
 window.addEventListener("DOMContentLoaded", () => {
-    greetInputEl = document.querySelector("#greet-input");
-    greetMsgEl = document.querySelector("#greet-msg");
-    document
-        .querySelector("#greet-button")
-        .addEventListener("click", () => greet());
+    document.querySelector("#connect_button").addEventListener("click", () => {
+        localStorage.setItem("pseudo", document.querySelector("#pseudo_input").nodeValue);
+        window.location = "/pages/test/test.html";
+    });
 });
