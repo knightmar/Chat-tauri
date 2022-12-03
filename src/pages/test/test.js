@@ -1,1 +1,3 @@
-window.onload = alert(localStorage.getItem("pseudo"));
+window.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("#pseudo").textContent += localStorage.getItem("pseudo").trim();
+});
