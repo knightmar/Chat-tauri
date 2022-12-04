@@ -12,6 +12,7 @@ fn greet(name: &str) -> String {
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(tauri::generate_handler![network.connect])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
