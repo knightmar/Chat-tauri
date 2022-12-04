@@ -2,9 +2,11 @@ const {invoke} = window.__TAURI__.tauri;
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#pseudo").textContent += localStorage.getItem("pseudo").trim();
+    let pseudo = localStorage.getItem("pseudo").trim();
+    let ip = localStorage.getItem("ip");
+    document.querySelector("#pseudo").textContent += pseudo;
 
     document.querySelector("#test_button").addEventListener("click", () => {
-        invoke("connect", {ipAdress: "192.168.10.100"})
+        invoke("connect", {ipAdress: ip.trim()})
     });
 });

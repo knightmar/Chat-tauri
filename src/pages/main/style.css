@@ -59,6 +59,7 @@ button {
 button:hover {
     border-color: #396cd8;
     box-shadow: 0 2px 2px rgba(58, 58, 58, 0.58);
+    background-color: rgba(89, 89, 89, 0.1);
 }
 
 input,
@@ -66,9 +67,11 @@ button {
     outline: none;
 }
 
-#pseudo_input:hover {
+input:hover {
     border-color: #396cd8;
     box-shadow: 0 2px 2px rgba(58, 58, 58, 0.58);
+    background-color: rgba(89, 89, 89, 0.1);
+
 }
 
 @media (prefers-color-scheme: dark) {
