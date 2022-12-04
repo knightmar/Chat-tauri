@@ -1,5 +1,3 @@
-const {invoke} = window.__TAURI__.tauri;
-
 window.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#connect_button").addEventListener("click", () => {
         let pseudo = document.querySelector("#pseudo_input").value;
