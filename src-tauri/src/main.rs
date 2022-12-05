@@ -12,14 +12,15 @@ fn greet(name: &str) -> String {
 }
 
 #[tauri::command]
-fn connect(ip_adress: &str) {
-    network::network::connect(ip_adress);
+fn connect(ip_adress: &str, port: u16) {
+    network::network::connect(ip_adress, port);
 }
 
 fn main() {
-    tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
-        .invoke_handler(tauri::generate_handler![connect])
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+    network::network::connect("192.168.244.130", 4500);
+    // tauri::Builder::default()
+    //     .invoke_handler(tauri::generate_handler![greet])
+    //     .invoke_handler(tauri::generate_handler![connect])
+    //     .run(tauri::generate_context!())
+    //     .expect("error while running tauri application");
 }
